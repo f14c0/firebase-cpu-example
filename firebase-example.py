@@ -7,7 +7,7 @@ import threading
 from firebase import firebase
 
 CPU_NUMBER = psutil.cpu_count(logical=False)
-FIREBASE_URL = 'https://<your-firebase-app>.firebaseio.com/'
+FIREBASE_URL = 'https://cpu-example.firebaseio.com'
 
 def save_cpu_usage():
     fb = firebase.FirebaseApplication(FIREBASE_URL, None)
@@ -18,6 +18,7 @@ def save_cpu_usage():
         path = '/cpu'
     result = fb.put(path,"/",cpu)
     threading.Timer(1.0,save_cpu_usage).start()
+
 
 
 save_cpu_usage()
