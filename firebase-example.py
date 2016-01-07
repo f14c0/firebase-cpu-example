@@ -18,7 +18,4 @@ def save_cpu_usage():
         path = '/cpu'
     result = fb.put(path,"/",cpu)
     threading.Timer(1.0,save_cpu_usage).start()
-
-
-
 save_cpu_usage()
